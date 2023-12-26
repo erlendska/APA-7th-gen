@@ -1,0 +1,262 @@
+/* popup.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 10px;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+div {
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+button {
+  font-family: inherit;
+  color: white;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  overflow: visible;
+}
+
+#generateReferenceButton {
+  background-color: #4caf50;
+  font-size: 20px;
+}
+
+#generateReferenceButton:hover {
+  background-color: #45a049;
+}
+
+#copyReferenceButton {
+  background-color: #4caf50;
+  position: relative; /* What does this mean??*/
+  border: none;
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#copyReferenceButton:hover::before {
+  content: "Copy";
+  position: absolute; /* How does this correlate to the previous position? */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #314f86cc;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: content 0.3s ease;
+}
+
+#copyReferenceButton[data-copied="true"]:hover::before {
+  content: "Copied!";
+}
+
+#sandbox {
+  width: 100%;
+  height: 400px;
+}
+
+/* Type-selector design */
+
+.input-container {
+  display: flex;
+  width: 100%;
+}
+
+#searchInput {
+  font-family: inherit;
+  color: white;
+  background-color: #00a1d6;
+  display: stretch;
+  /*width: 100%;*/
+  width: 50%;
+  height: 18px;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#searchInput::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+#searchInput:hover {
+  background-color: #008CBA;
+}
+
+#searchInput:focus {
+  outline: none;
+  background-color: #0078a0;
+}
+
+#suggestions {
+  font-family: inherit;
+  color: white;
+  background-color: #00a1d6;
+  display: flex;
+  /*width: calc(50% - 14px);*/
+  width: 50%;
+  height: 35px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  overflow-y: auto;
+  padding: 5px;
+  font-size: auto;
+  margin-left: 14px;
+  border-radius: 5px;
+  list-style-type: decimal;
+  transition: background-color 0.3s ease;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#suggestions li {
+  display: flex;
+  flex-grow: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+#suggestions li:hover {
+  background-color: #008CBA;
+  border-radius: 5px;
+}
+
+/* Data fields design */
+
+#fieldsContainer {
+  width: 100%;
+}
+
+#dataInput {
+  font-family: inherit;
+  background-color: #0fb382;
+  color: white;
+  display: inline-flex;
+  flex-grow: 1;
+  width: 23%;
+  height: 18px;
+  padding: 14px 28px;
+  font-size: auto;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: top;
+  transition: background-color 0.3s ease;
+}
+
+#dataInput::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+#dataInput:hover {
+  background-color: #0d9c71;
+}
+
+#dataInput:focus {
+  outline: none;
+  background-color: #0c8d66;
+}
+
+#dataList {
+  font-family: inherit;
+  background-color: #0fb382;
+  color: white;
+  display:inline-flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 35%;
+  min-height: 18px;
+  padding: 14px 28px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  margin-left: 14px;
+  list-style-type: none;
+  transition: background-color 0.3s ease;
+}
+
+#dataList li {
+  cursor: pointer;
+  padding: 2px 0px 2px 2px;
+  font-size: auto;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 100%;
+  transition: content opacity background-color 0.3s ease;
+  position: relative;
+}
+
+#dataList li:hover {
+  background-color: #0d9c71;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+#dataList li:hover::before {
+  font-family: inherit;
+  font-size: auto;
+  background-color: #cf3939cc;
+  color: white;
+  content: "Delete";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  padding: 2px 0px 2px 2px;
+  border-radius: 5px;
+  font-weight: bold;
+  top:auto;
+  left: auto;
+  transition: content 0.3s ease;
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

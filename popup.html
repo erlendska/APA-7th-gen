@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div id="generateButton">
+        <button id="generateReferenceButton">Generate reference</button>
+    </div>
+    <div class="input-container">
+        <input type="text" id="searchInput" placeholder="Search.." autocomplete="off">
+        <div id="suggestions"></div>
+    </div>
+
+    <!-- UI to add info quick (hover and select) -->
+
+    <div class="fields-container">
+        <div id="dataCollection"></div>
+    </div>
+
+    <div id="copyButton">
+        <button id="copyReferenceButton" style="display: none;"></button>
+    </div>
+    <script type="module" src="popup.js"></script>
+    <!--<iframe id="sandbox" src="sandbox.html" style="display: none;"></iframe>-->
+</body>
+
+</html>

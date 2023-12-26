@@ -1,0 +1,14 @@
+[APA7th-overlay="true"] {
+	position: relative; 
+}
+
+[APA7th-overlay="true"]:hover::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	opacity: 0.3;
+}
